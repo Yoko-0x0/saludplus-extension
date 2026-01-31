@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de privacidad – Extensión SaludPlus</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+        }
+        h3 {
+            color: #555;
+            margin-top: 20px;
+        }
+        strong {
+            color: #2c3e50;
+        }
+        ul, ol {
+            margin-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+        .update-date {
+            color: #7f8c8d;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Política de privacidad – Extensión SaludPlus</h1>
+        <p class="update-date"><strong>Última actualización:</strong> [fecha]</p>
+        
+        <p>Esta política describe cómo la extensión <strong>SaludPlus</strong> para Chrome ("la extensión", "el complemento") trata la información en relación con su único propósito: permitir a los usuarios con cuenta @saludplus.co abrir el correo institucional desde Google Chat.</p>
+        
+        <h2>1. Responsable</h2>
+        <p>La extensión SaludPlus es publicada por [nombre de tu empresa/organización]. Para cuestiones sobre privacidad: [correo de contacto].</p>
+        
+        <h2>2. Alcance</h2>
+        <p>Esta política aplica al uso de la extensión en navegadores compatibles (Chrome y derivados). No cubre los sitios web de terceros (Google, SaludPlus, etc.) ni sus propias políticas.</p>
+        
+        <h2>3. Datos que utiliza la extensión</h2>
+        
+        <h3>3.1 Información obtenida en la página</h3>
+        <ul>
+            <li>La extensión <strong>solo se ejecuta</strong> en:
+                <ul>
+                    <li><code>https://mail.google.com/*</code></li>
+                    <li><code>https://chat.google.com/*</code></li>
+                </ul>
+            </li>
+            <li>En esas páginas, la extensión <strong>lee texto del contenido</strong> (DOM) para detectar si la sesión corresponde a una cuenta de correo <strong>@saludplus.co</strong> (por ejemplo, en contexto de "accounts").</li>
+            <li><strong>No guarda</strong> ese correo ni ningún otro dato en la extensión (no utiliza almacenamiento local ni remoto para datos de usuario).</li>
+        </ul>
+        
+        <h3>3.2 Uso del correo electrónico</h3>
+        <p>El correo @saludplus.co detectado se utiliza <strong>únicamente</strong> para:</p>
+        <ol>
+            <li>Decidir si se muestra el botón de Correo SaludPlus en la barra.</li>
+            <li>Solicitar el <strong>número de mensajes no leídos</strong> al servicio de SaludPlus (<code>https://gestion.saludplus.co</code>).</li>
+            <li>Establecer la conexión en tiempo real con el servicio de colas (<code>https://qmanager.saludplus.co</code>) para actualizar el conteo de no leídos.</li>
+        </ol>
+        <p>No se usa para publicidad, perfiles de usuario, ni para ningún fin distinto al descrito.</p>
+        
+        <h2>4. Destinatarios de los datos</h2>
+        <ul>
+            <li>Los únicos servicios a los que la extensión <strong>envía</strong> el correo (o lo usa en la conexión) son:
+                <ul>
+                    <li><strong>gestion.saludplus.co</strong> – API de conteo de no leídos.</li>
+                    <li><strong>qmanager.saludplus.co</strong> – servicio SignalR para actualizaciones en tiempo real.</li>
+                </ul>
+            </li>
+            <li>No se venden ni se ceden datos a terceros con fines comerciales. No se usan para determinar solvencia ni actividades crediticias.</li>
+        </ul>
+        
+        <h2>5. Permisos de la extensión</h2>
+        <ul>
+            <li><strong>Permisos de host:</strong> La extensión solicita acceso a:
+                <ul>
+                    <li><code>mail.google.com</code> y <code>chat.google.com</code> – para inyectar el botón y leer el contenido necesario para detectar la sesión @saludplus.co.</li>
+                    <li><code>correo.saludplus.co</code> – destino del enlace del botón.</li>
+                    <li><code>gestion.saludplus.co</code> y <code>qmanager.saludplus.co</code> – para el conteo de no leídos y las actualizaciones en tiempo real.</li>
+                </ul>
+            </li>
+            <li>No se solicitan permisos de almacenamiento, ubicación, historial web ni otros no relacionados con el propósito descrito.</li>
+        </ul>
+        
+        <h2>6. Código remoto</h2>
+        <p>La extensión <strong>no</strong> carga ni ejecuta código desde servidores remotos. Todo el código (incluida la librería SignalR utilizada) forma parte del paquete de la extensión instalado por el usuario.</p>
+        
+        <h2>7. Cambios en esta política</h2>
+        <p>Cualquier cambio relevante en el tratamiento de datos se reflejará en esta página, actualizando la "Última actualización". Se recomienda revisarla de vez en cuando.</p>
+        
+        <h2>8. Contacto</h2>
+        <p>Para preguntas sobre esta política o sobre el tratamiento de datos de la extensión SaludPlus: [correo o formulario de contacto].</p>
+    </div>
+</body>
+</html>
